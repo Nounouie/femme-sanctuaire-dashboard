@@ -1,0 +1,284 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f1ea;
+  color: #4c433b;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 28px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #eadfd3;
+  border-radius: 38px;
+  padding: 44px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 24px 80px rgba(80, 62, 48, 0.12);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -100px;
+  top: -100px;
+  background: #dfe8de;
+  border-radius: 999px;
+  filter: blur(40px);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  left: -100px;
+  bottom: -100px;
+  background: #ead9c7;
+  border-radius: 999px;
+  filter: blur(40px);
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 12px;
+  color: #a48f7c;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(48px, 8vw, 86px);
+  line-height: 0.95;
+  font-weight: 300;
+}
+
+h2 {
+  margin: 0 0 24px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  font-weight: 300;
+}
+
+.heroText {
+  max-width: 850px;
+  font-size: 20px;
+  line-height: 1.7;
+  color: #6b5f55;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+nav button {
+  border: 1px solid #eadfd3;
+  background: rgba(255, 255, 255, 0.82);
+  color: #6b5f55;
+  padding: 14px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+nav button.active {
+  background: #4c433b;
+  color: white;
+  border-color: #4c433b;
+}
+
+.grid {
+  display: grid;
+  gap: 22px;
+}
+
+.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.panel {
+  border: 1px solid #eadfd3;
+  border-radius: 34px;
+  padding: 36px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 24px 80px rgba(80, 62, 48, 0.1);
+}
+
+.imageCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 34px;
+  min-height: 430px;
+  box-shadow: 0 24px 80px rgba(80, 62, 48, 0.14);
+}
+
+.imageCard img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  color: white;
+  background: linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0.12), transparent);
+}
+
+.overlay p {
+  max-width: 560px;
+  line-height: 1.55;
+}
+
+details {
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+}
+
+summary {
+  cursor: pointer;
+}
+
+.softBox {
+  border: 1px solid #efe4d8;
+  border-radius: 24px;
+  background: #f8f3ed;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.affirmation {
+  border: 1px solid #efe4d8;
+  border-radius: 24px;
+  background: #fffdf9;
+  padding: 22px;
+  text-align: left;
+  cursor: pointer;
+  color: #4c433b;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.affirmation span {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.affirmation.selected {
+  background: #dfe9df;
+  border-color: #b8cbb8;
+}
+
+.stack {
+  display: grid;
+  gap: 22px;
+}
+
+.stack.small {
+  gap: 12px;
+}
+
+.checkItem {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border: 1px solid #efe4d8;
+  border-radius: 24px;
+  background: #f8f3ed;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.checkItem input {
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  accent-color: #9b8a78;
+}
+
+.mantra {
+  border-radius: 34px;
+  padding: 36px;
+  background: #dfe8de;
+  box-shadow: 0 24px 80px rgba(80, 62, 48, 0.1);
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mantra h2 {
+  color: #475846;
+  font-size: clamp(38px, 5vw, 60px);
+}
+
+.mantra p:last-child {
+  font-size: 19px;
+  line-height: 1.6;
+  color: #536250;
+}
+
+@media (max-width: 820px) {
+  main {
+    padding: 14px;
+  }
+
+  .hero,
+  .panel,
+  .mantra {
+    padding: 26px;
+    border-radius: 28px;
+  }
+
+  .two,
+  .three {
+    grid-template-columns: 1fr;
+  }
+
+  .imageCard {
+    min-height: 380px;
+  }
+}
